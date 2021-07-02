@@ -1,0 +1,21 @@
+{
+    "presentationTitle": "Introductory Finance",
+    "slides": {
+        "1":{
+            "title":"Introductory Finance",
+            "content":"By Raymond Arthur"
+        },
+        "2":{
+            "title":"Time value of money",
+            "content":"We'd take a dollar today over a dollar tomorrow because today is more certain"
+        },
+        "3":{
+            "title":"Discounted cash flows",
+            "content":"To receive a dollar tomorrow, we'd need to be compensated for the credit risk we're taking"
+        },
+        "4":{
+            "title":"Discounted cash flows - cont'd",
+            "content":"We'd invest less than a dollar today, with the expectation that we'd get a dollar tomorrow"
+        }
+    }
+}
