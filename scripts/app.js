@@ -1,13 +1,9 @@
 //loading data
 fetch('data/presentation.json')
     .then(response => response.json())
-    .then(data=>{
+    .then(jsonData=>{     
         //saving data in presentationData binding
-        const presentationData = data;
-        console.log(Object.keys(presentationData.slides).length);
-
-        //using a binding to specify the slide number
-        //let slideNumber = 1;
+        const presentationData = jsonData;        
 
         //react components
         class Title extends React.Component{
@@ -28,14 +24,17 @@ fetch('data/presentation.json')
             constructor(props){
                 super(props);
             }
-
             render(){
+                const markupData = this.props.content;
+
+                function htmlMarkup(data){
+                    return {__html: `${data}`}
+                }
+
                 return(
-                    <div className='body'>
-                        <p>
-                            {this.props.content}
-                        </p>
-                    </div>
+                    <div className='body'
+                        dangerouslySetInnerHTML={htmlMarkup(markupData)}                    
+                    />
                 );
             }
         }
@@ -70,12 +69,13 @@ fetch('data/presentation.json')
 
             nextSlide(e){
                 let slideIncrement;
-                if(this.state.slideNumber == 4)
+                //Note that Object.keys(presentationData.slides).length effectively returns the number of slides in the json object
+                //We don't want to let the slideNumber be greater than the  the number of keys in the presentationData object
+                if(this.state.slideNumber == Object.keys(presentationData.slides).length)
                     {slideIncrement = 0}
                 else
                     {slideIncrement = 1}
 
-                //console.log(this.state.slideNumber);
                 this.setState (
                     (state) =>
                     (
@@ -106,14 +106,15 @@ fetch('data/presentation.json')
             }
 
             render(){
-                //console.log(this.props.slideNumber);
                 return(
                     
                     <div>
                         <Title title={this.state.title} />
                         <Body content={this.state.content} />
-                        {this.state.slideNumber > 1 &&  <Button buttonText='Previous' onClick={this.previousSlide}/>}
-                        {this.state.slideNumber < 4 && <Button buttonText='Next' onClick={this.nextSlide}/>}
+                        <div className = 'buttons'>
+                                {this.state.slideNumber > 1 &&  <Button buttonText='Previous' onClick={this.previousSlide}/>}
+                                {this.state.slideNumber < Object.keys(presentationData.slides).length && <Button buttonText='Next' onClick={this.nextSlide}/>}
+                        </div>
                     </div>
                 );
             }
