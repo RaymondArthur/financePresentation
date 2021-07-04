@@ -10,8 +10,25 @@ h1 {
     padding-bottom:0.5em;
 }
 
+h2 {
+    color: black;
+    text-align: center;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    font-size: xx-large;
+}
+
 p {
-    font-size:xx-large;
+    font-size:x-large;
+}
+
+li {
+    font-size: x-large;
+    padding-bottom: 0.5em;
+}
+
+mark {
+    background-color: cornsilk;
 }
 
 button {
@@ -40,9 +57,18 @@ button {
 
 .buttons {
     margin-left: auto;
-    /*border-style: solid;
-    border-width: 1px;
-    border-color:black;*/
+}
+
+.question {
+    font-style:italic;
+    text-align: center;
+}
+
+.answer {
+    font-style:italic;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
 }
 
 #root {

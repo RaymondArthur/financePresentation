@@ -3,19 +3,23 @@
     "slides": {
         "1":{
             "title":"Introductory Finance",
-            "content":"By Raymond Arthur"
+            "content":"<p>By Raymond Arthur</p>"
         },
         "2":{
             "title":"Time value of money",
-            "content":"We'd take a dollar today over a dollar tomorrow because today is more certain"
+            "content":"<p>We'd take a dollar <em>today</em> over a dollar tomorrow because <strong>today is more certain</strong></p>"
         },
         "3":{
             "title":"Discounted cash flows",
-            "content":"To receive a dollar tomorrow, we'd need to be compensated for the credit risk we're taking"
+            "content":"<p>To receive a dollar tomorrow, we'd need to be compensated for the credit risk we're taking</p><ul><li>Risk means a chance of losing our investment</li><li>We need to get compensated in the form of interest</li></ul>"
         },
         "4":{
             "title":"Discounted cash flows - cont'd",
-            "content":"We'd invest less than a dollar today, with the expectation that we'd get a dollar tomorrow"
+            "content":"<p>We'd invest less than a dollar today, with the expectation that we'd get a dollar tomorrow</p>"
+        },
+        "5":{
+            "title":"Thank you",
+            "content":"<p>Thank you for your time.</p><p>Contact me if you have any questions and, as always, some good resources are:</p><ul><li>Google</li><li>Wikipedia</li><li>YouTube</li></ul>"
         }
     }
 }
