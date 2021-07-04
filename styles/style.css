@@ -43,7 +43,7 @@ button {
 }
 
 .slide {
-    min-height:95vh;
+    min-height:75vh;
 }
 
 .title {
@@ -52,7 +52,7 @@ button {
 }
 
 .body {
-    min-height: 75vh;
+    min-height: 50vh;
 }
 
 .buttons {
