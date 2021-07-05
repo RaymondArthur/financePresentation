@@ -77,10 +77,3 @@ button {
     text-align: right;
 }
 
-.slideMenuColumns {
-    column-count: 4;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-}
-
