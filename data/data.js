@@ -96,71 +96,11 @@ let htmlData = {
             </ul>`
             .replace(/(\n)(\s{2,})/g," ")
         },
-        
-        /*
-        4:{
-            title:"Conceptual Question: Time Value of Money",
-            content:`
-            <p class="question">If you have the choice between receiving $100 today or $100 in a month, which would you choose?
-            </p>
-            <p class="answer"><mark>All else being equal, you should take $100 today</mark></p>
-            <p class="question">And, more importantly, why?</p>
-            <p class="question"><mark>There is a chance (i.e. "risk") of not receiving our $100 in a month</mark></p>
-            <p class="question"><mark>Without being compensated for taking on the credit risk, we prefer $100 today</mark></p>` 
-            .replace(/(\n)(\s{2,})/g," ")
-        },
-        5:{
-            title:"Time Value of Money",
-            content:`<p class="answer">The logic behind the answer: A dollar today is worth more than a dollar in the future</p>
-            <p class="question"><mark>This concept is known as the "Time Value of Money"</mark></p>`
-        },
-        6:{
-            title:"Risk and Compensation",
-            content:`<ul>
-            <li>If our choice is $100 today vs $100 in the future, always elect to receive $100 <em>today</em></li>
-            <li>We have no incentive to receive our money in the future</li>
-            <li><em>Risk</em> generally refers to the likelihood of not getting our money back</li>
-            </ul>`
-        },
-        7:{
-            title:"Risk and Compensation",
-            content:`
-            <ul><li>We would need appropriate <em>compensation</em> to make a future payment acceptable</li></ul>
-            <p class ="answer"><mark>Basic principle of finance: we do not like unnecessary risk. To accept taking risk, we expect compensation</mark></p>
-            <ul><li>Charging interest is one way of being compensated</li></ul>`
-        },
-        8:{
-            title:"Conceptual Question: Risk and Compensation",
-            content:`<p class="question">You lent $100 to someone. Would you prefer to:</p>
-            <ul>
-                <li>Get your $100 back today; or</li>
-                <li>Get $110 in a month?</li>
-            </ul>` 
-        },
-        9:{
-            title:"Conceptual Question: Risk and Compensation",
-            content:`<p class="question">You lent $100 to someone. Would you prefer to:</p>
-            <ul>
-                <li>Get your $100 back today; or</li>
-                <li>Get $110 in a month?</li>
-            </ul>
-            <p class="answer"><mark>Your preference will depend on your "risk tolerance"</mark></p>
-            <ul>
-                <li>This time, you are receiving 10% interest as compensation for the risk of not getting your money back in a month's time</li>
-                <li>Some of you will still prefer to get your $100 back today</li>
-                <li>But, some of you will happily take on the credit risk in exchange for the 10% interest</li>
-            </ul>` 
-
-        },*/
         11:{
             title:"Thank you",
             content:`<p>Thank you for your time.</p><p>Contact me if you have any questions and, as always, some good resources are:</p><ul><li>Google</li><li>Wikipedia</li><li>YouTube</li></ul>`
         }
     }
 }
-
-// for(let i of Object.keys(htmlData.slides)){
-//     console.log(htmlData.slides[i].content.replace(/(\n)(\t)(\r)(\s)(&nbsp;)/,"-"));
-// }
 
 const jsonData = JSON.stringify(htmlData);
