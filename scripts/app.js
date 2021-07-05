@@ -2,6 +2,27 @@
 const presentationData = JSON.parse(jsonData);        
 
 //react components
+class ProgressBar extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        const style ={
+            width: this.props.slideNumber / this.props.totalSlides * 100 +'%',
+            backgroundColor: 'pink',
+            height: '20px',
+            margin: '0px'
+        }; 
+        console.log();
+        return (
+            <div style = {style}>
+             
+            </div> 
+        );
+    }
+}
+
 class Title extends React.Component{
     constructor(props){
         super(props);
@@ -39,6 +60,20 @@ class Button extends React.Component{
     render(){
         return(
             <button onClick={this.props.onClick}>{this.props.buttonText}</button>
+        );
+    }
+}
+
+class SlideProgress extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <div className = "slideProgress">
+                <p>Slide {this.props.slideNumber} of {this.props.totalSlides}</p>
+            </div>
         );
     }
 }
@@ -105,17 +140,20 @@ class Slide extends React.Component{
         return(
             
             <div>
+                <ProgressBar slideNumber = {this.state.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
                 <Title title={this.state.title} />
                 <Body content={this.state.content} />
                 <div className = 'buttons'>
                         {this.state.slideNumber > 1 &&  <Button buttonText='Previous' onClick={this.previousSlide}/>}
                         {this.state.slideNumber < Object.keys(presentationData.slides).length && <Button buttonText='Next' onClick={this.nextSlide}/>}
                 </div>
+                <SlideProgress slideNumber = {this.state.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
             </div>
         );
     }
 }
 
 ReactDOM.render(<Slide className ='slide'/>,document.getElementById('root'));
+
 
 
