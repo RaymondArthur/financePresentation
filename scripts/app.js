@@ -14,7 +14,6 @@ class ProgressBar extends React.Component{
             height: '20px',
             margin: '0px'
         }; 
-        console.log();
         return (
             <div style = {style}>
              
@@ -78,24 +77,114 @@ class SlideProgress extends React.Component{
     }
 }
 
+class SlideMenuButton extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+                <div className='slideMenuButton'>
+                    <Button  buttonText='Toggle Slide Quick-Menu' onClick={this.props.toggleSlideMenu} />
+                </div>                
+            );
+    }
+}
+
+class SlideMenu extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        let slideMenuList = [];
+        for(let i = 1; i <= Object.keys(presentationData.slides).length; i++)
+         {
+             slideMenuList.push(<div key={i.toString()} className="slideMenuTile" >
+                 <Slide 
+                    tileId = {this.props.slideKeys[i-1]} 
+                    title={presentationData.slides[i].title} 
+                    content={presentationData.slides[i].content }
+                    quickSelectSlide={this.props.quickSelectSlide}
+                />
+             </div>);
+        }
+        
+        return(
+            this.props.toggleState == true ?
+                <div className="slideMenuColumns">
+                    {slideMenuList}
+                </div>
+            :
+            null
+            );
+    }
+}
+
 class Slide extends React.Component{
     constructor(props){
         super(props);
-        this.state={
+        this.getSlideTileId = this.getSlideTileId.bind(this);
+    }
+
+    getSlideTileId(e){
+        this.props.quickSelectSlide(this.props.tileId);
+    }
+
+    render(){
+        return(
+            this.props.slideMenu == false ?
+                <div className ='slide'>
+                    <ProgressBar slideNumber = {this.props.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
+                    <Title title={this.props.title} />
+                    <Body content={this.props.content} />
+                    <div className = 'buttons'>
+                        {this.props.slideNumber > 1 &&  <Button buttonText='Previous' onClick={this.props.previousSlide}/>}
+                        {this.props.slideNumber < Object.keys(presentationData.slides).length && <Button buttonText='Next' onClick={this.props.nextSlide}/>}
+                    </div>
+                    <SlideProgress slideNumber = {this.props.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
+                </div>
+                :
+                <div className ='slideMenuTile' onClick={this.getSlideTileId} tileid ={this.props.tileId}>
+                    <Title tileId ={this.props.tileId} title={this.props.title} />
+                    <Body tileId ={this.props.tileId} content={this.props.content}/>
+                </div>
+                
+        );
+    }
+}
+
+class ReactApp extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={    
+            showSlideMenu:false,
             slideNumber:'',
             title:'',
-            content:''
+            content:'',
+            slideKeys:''
         }
         this.nextSlide=this.nextSlide.bind(this);
         this.previousSlide=this.previousSlide.bind(this);
+        this.toggleSlideMenu = this.toggleSlideMenu.bind(this);
+        this.quickSelectSlide = this.quickSelectSlide.bind(this);
     }
 
     componentDidMount(){
+        let slideKeysList = [];
+        for(let j = 1; j<= Object.keys(presentationData.slides).length;j++){
+            slideKeysList.push(j);
+        }
         this.setState ({
             slideNumber: 1,
             title:presentationData.slides[1].title,
-            content:presentationData.slides[1].content
+            content:presentationData.slides[1].content,
+            slideKeys:slideKeysList
         })
+    }
+
+    toggleSlideMenu(e){
+        this.setState({showSlideMenu:!this.state.showSlideMenu});
     }
 
     nextSlide(e){
@@ -135,25 +224,39 @@ class Slide extends React.Component{
             })
         )
     }
+    
+    quickSelectSlide(num){
+        this.setState({
+        slideNumber:num,
+            title:presentationData.slides[num].title,
+            content:presentationData.slides[num].content
+        })
+    }
+
 
     render(){
         return(
-            
             <div>
-                <ProgressBar slideNumber = {this.state.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
-                <Title title={this.state.title} />
-                <Body content={this.state.content} />
-                <div className = 'buttons'>
-                        {this.state.slideNumber > 1 &&  <Button buttonText='Previous' onClick={this.previousSlide}/>}
-                        {this.state.slideNumber < Object.keys(presentationData.slides).length && <Button buttonText='Next' onClick={this.nextSlide}/>}
-                </div>
-                <SlideProgress slideNumber = {this.state.slideNumber} totalSlides = {Object.keys(presentationData.slides).length} />
+                <Slide 
+                    slideNumber = {this.state.slideNumber}
+                    slideMenu={false} title={this.state.title}
+                    content={this.state.content}
+                    nextSlide={this.nextSlide}
+                    previousSlide={this.previousSlide}
+                />
+                <SlideMenuButton toggleSlideMenu={this.toggleSlideMenu} toggleState={this.state.showSlideMenu}/>
+                <SlideMenu 
+                    slideKeys={this.state.slideKeys}
+                    toggleState={this.state.showSlideMenu}
+                    slideMenu= {true} 
+                    quickSelectSlide={this.quickSelectSlide}
+                />
             </div>
         );
     }
 }
 
-ReactDOM.render(<Slide className ='slide'/>,document.getElementById('root'));
+ReactDOM.render(<ReactApp />,document.getElementById('root'));
 
 
 
