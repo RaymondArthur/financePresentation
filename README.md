@@ -19,10 +19,10 @@ By committing to creating a slide deck, this app had me delve into the beginner 
 
 ### File structure
     .                   
-    ├── data\           # HTML data for the slides (stored in a JSON object)
-    ├── images\         # contains the SVG images used on a few slides.
-    ├── scripts\        # holds app.js
-    ├── styles\         # styling for the app
+    ├── \data\           # HTML data for the slides (stored in a JSON object)
+    ├── \images\         # contains the SVG images used on a few slides.
+    ├── \scripts\        # holds app.js
+    ├── \styles\         # styling for the app
     ├── index.html      # the entry file for the app
     └── README.md
 
