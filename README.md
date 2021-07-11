@@ -37,7 +37,7 @@ The main slide being used for the presentation is called `Slide` and is declared
 
 #### Quick-menu component
 The quick-menu ancestral component actually renders individual `slideTile` ReactJS components that iterate through the JSON object and render the contents as individual slides.
-When an onClick event is detected, the `slideNumber` state from a `slideTile` is lifted to the ancestral `ReactApp` component. `slideNumber` is then passed to the the main `Slide` component declared in `ReactApp`, and the main slide for the presentation is updated based on the `slideNumber`.
+When an `onClick` event is detected, the `slideNumber` state from a `slideTile` is lifted to the ancestral `ReactApp` component. `slideNumber` is then passed to the the main `Slide` component declared in `ReactApp`, and the main slide for the presentation is updated based on the `slideNumber`.
 
 Managing state is actually quite easy to do in ReactJS, and I also figured out that I could lift state up from lower components to ancestral components via methods (it's obvious in hindsight!).
 
