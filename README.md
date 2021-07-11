@@ -24,8 +24,8 @@ Because the HTML was my own code, I didn't sanitize it. In practice, the HTML wo
 By committing to creating a slide deck, this app had me delve into the beginner and intermediate material for ReactJS. ReactJS is a wonderfully flexible front-end framework that allows me to quickly build a web-based UI while having data living within the components that they will be used in.
 
 The two main ReactJS components are:
-* A main slide component that pulls HTML markup presentation data from the JSON object and populates the main div that the audience is looking at
-* A 'quick-menu' component that iterates through all of the slides and renders mini slides that the presenter can use to quickly navigate to a slide.
+* A main `Slide` component that pulls HTML markup presentation data from the JSON object and populates the main div that the audience is looking at
+* A `SlideMenu` component that acts as a slide 'quick-menu'. The quick-menu component that iterates through all of the slides and renders mini slides that allow the presenter to quickly navigate to the desired slide.
 
 #### Main slide component
 The main slide being used for the presentation is called `Slide` and is declared in the great ancestor, `ReactApp`. 
