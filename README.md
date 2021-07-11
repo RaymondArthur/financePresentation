@@ -12,7 +12,13 @@ The technologies for the slide deck app are split into:
 2. ReactJS
 
 ## JavaScript: storing data in JS objects, and exporting these objects via JSON
+Because Github pages only really allow client-side code, I couldn't use tools like ReactDOM or ReactDOMServer to generated server-side HTML markup.
 
+So, as a compromise, I wrote the HTML markup manually and stored it in a JavaScript object in a .js file. Then I converted it to a JSON object for use in the React components.
+
+I used React's dangerouslySetInnerHTML to render the HTML in the `Body` component of the main React `Slide` component.
+
+Because the HTML was my own code, I didn't sanitize it. In practice, the HTML would need to be sanitized and - ideally - would be generated on the server, sanitized to remove blacklisted HTML elements (e.g. `<script>`), and then passed to React for rendering.
 
 ## ReactJS: building the front-end
 By committing to creating a slide deck, this app had me delve into the beginner and intermediate material for ReactJS. ReactJS is a wonderfully flexible front-end framework that allows me to quickly build a web-based UI while having data living within the components that they will be used in.
