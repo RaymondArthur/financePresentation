@@ -25,3 +25,12 @@ By committing to creating a slide deck, this app had me delve into the beginner 
 |-\scripts\app.js... holds app.js, the main app file that imports the JSON HTML data, and that defines the React components
 |-\styles\style.css... contains the styling for the app
 
+    .
+    ├── build                   # Compiled files (alternatively `dist`)
+    ├── docs                    # Documentation files (alternatively `doc`)
+    ├── src                     # Source files (alternatively `lib` or `app`)
+    ├── test                    # Automated tests (alternatively `spec` or `tests`)
+    ├── tools                   # Tools and utilities
+    ├── LICENSE
+    └── README.md
+
