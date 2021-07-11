@@ -1,4 +1,4 @@
-# Faux Slide Deck: Introductory Finance Presentation
+# ReactJS Slide Deck: Introductory Finance Presentation
 An introductory finance slide deck that I presented to project staff at the Reserve Bank of Australia.
 
 # The purpose of this app: learning beginner and intermediate ReactJS
