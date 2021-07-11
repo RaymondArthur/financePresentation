@@ -18,6 +18,7 @@ The technologies for the slide deck app are split into:
 By committing to creating a slide deck, this app had me delve into the beginner and intermediate material for ReactJS. ReactJS is a wonderfully flexible front-end framework that allows me to quickly build a web-based UI while having data living within the components that they will be used in.
 
 ## File structure
+*
 -public
 |-\data\... holds the .js file that contains the HTML data for the slides (stored in a JSON object). Also contains a stringified JSON object that is used by app.js
 |-\images\... contains the SVG images used on a few slides. The SVG images were created via MS Excel and are vector images, which mean they won't be pixelated if the user adjusts the zoom in the browser UI
