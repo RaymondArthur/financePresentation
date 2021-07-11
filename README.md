@@ -47,6 +47,6 @@ Managing state is actually quite easy to do in ReactJS, and I also figured out t
     ├── \images\         # contains the SVG images used on a few slides.
     ├── \scripts\        # holds app.js
     ├── \styles\         # styling for the app
-    ├── index.html      # the entry file for the app
+    ├── index.html       # the entry file for the app
     └── README.md
 
