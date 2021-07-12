@@ -129,8 +129,8 @@ let htmlData = {
             title:"Bonds/Bills - Cash Flow Profile",
             content:`
             <p>The cash flows of a fixed interest bond vs bill</p>
-            <img src='./images/bondCashProfile.svg' class='multipleImages'/>
-            <img src='./images/billCashProfile.svg' class='multipleImages'/>
+            <img src='images/bondCashProfile.svg' class='multipleImages'/>
+            <img src='images/billCashProfile.svg' class='multipleImages'/>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
@@ -169,7 +169,7 @@ let htmlData = {
             title:"Bonds/Bills - Valuation & Interest Rates",
             content:`
             <p>Bond $10m face value, 10% coupon rate:</p>
-            <img src='./images/bondPVVersusInterestRates.svg' class='singleImage'>
+            <img src='images/bondPVVersusInterestRates.svg' class='singleImage'>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
