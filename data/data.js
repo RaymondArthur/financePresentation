@@ -187,7 +187,7 @@ let htmlData = {
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
             <p>Duration formula:</p>
-            <p class='answer'><mark>Modified Duration = (Sum(PV<sub>CFi</sub> x T)) / PV) / (1 + ytm) of bond</mark></p>
+            <p class='answer'><mark>Modified Duration = (Sum(PV<sub>CFi</sub> x T)) / PV) / (1 + ytm)</mark></p>
             <p>From the formula</p>
             <ul>
                 <li>Longer dated cash flows increase duration</li>
