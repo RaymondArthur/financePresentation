@@ -34,7 +34,7 @@ div.slide li {
 }
 
 div.slide mark {
-    background-color: cornsilk;
+    background-color: yellow;
 }
 
 div.slide button {
@@ -61,7 +61,7 @@ div.slide .title {
 }
 
 div.slide .body {
-    min-height: 60vh;
+    min-height: 70vh;
 }
 
 div.slide .buttons {
@@ -78,6 +78,27 @@ div.slide .answer {
     text-align: center;
     margin-left: auto;
     margin-right:auto;
+}
+
+div.slide img.singleImage  {
+    display: block;
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.slide img.multipleImages {
+    /*display: block;*/
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.slide iframe {
+    height:40vh;
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Styling for the slide menu toggle button */
@@ -143,6 +164,18 @@ div.slideMenuTile p {
 div.slideMenuTile {
     text-align: center;
     font-size: 10px;
+}
+
+div.slideMenuTile img {
+    width: 40%;
+    margin: auto;
+}
+
+div.slideMenuTile .slideMenuTileIFrame {
+    height:10px;
+    width:10px;
+    /*margin-left: auto;
+    margin-right: auto;*/
 }
 
 
