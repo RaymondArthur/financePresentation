@@ -129,6 +129,7 @@ class Slide extends React.Component{
 
     getSlideTileId(e){
         this.props.quickSelectSlide(this.props.tileId);
+        window.scrollTo(0,0);
     }
 
     render(){
