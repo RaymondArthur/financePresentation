@@ -68,9 +68,14 @@ div.slide .buttons {
     margin-left: auto;
 }
 
-div.slide .question {
-    font-style:italic;
+div.slide p.question {
+    width:720px;
+    font-weight: bold;
     text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 10px;
+    background-color:lavender;
 }
 
 div.slide .answer {
