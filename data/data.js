@@ -21,42 +21,73 @@ let htmlData = {
         3:{
             title:"Conceptual Question: Time Value of Money",
             content:`
-            <p class="question">If you have the choice between receiving $100 today or $100 in a month, which would you choose?
-            </p>
-            <p class="question">Why?</p>`
+            <div class="qanda">
+                <div class="question">
+                    <p>If you have the choice between receiving $100 today or $100 in a month, which would you choose?</p>
+                </div>
+            </div>
+            <div class="qanda">    
+                <div class="question">
+                    <p>Why?</p>
+                </div>
+            </div>
+            `
             .replace(/(\n)(\s{2,})/g," ")
         },
         4:{
             title:"Conceptual Question: Time Value of Money",
             content:`
-            <p class="question">If you have the choice between receiving $100 today or $100 in a month, which would you choose?
-            </p>
-            <p class="answer"><mark>All else being equal, you should take $100 today</mark></p>
-            <p class="question">Why?</p>
-            <p class="question"><mark>You could take your $100 today and invest it for one month</mark></p>
-            <p class="question"><mark>All else being equal, your one-month investment would return more than $100</mark></p>` 
+            <div class="qanda">
+                <div class= "question">
+                    <p>If you have the choice between receiving $100 today or $100 in a month, which would you choose?
+                    </p>
+                </div>
+                <div class="answer">
+                    <p>All else being equal, you should take $100 today</p>
+                </div>
+            </div>
+            <div class= "qanda">
+                <div class="question">
+                    <p class="question">Why?</p>
+                </div>
+                <div class="answer">    
+                    <p class="answer">You could take your $100 today and invest it for one month</p>
+                    <p class="answer">All else being equal, your one-month investment would return more than $100</p>
+                </div>
+            </div>` 
             .replace(/(\n)(\s{2,})/g," ")
         },
         5:{
             title:"Time Value of Money",
-            content:`<p>The logic behind the answer:</p>
-            <p class="answer"> A dollar today is worth more than a dollar in the future, because a dollar today can be invested for a positive return</p>
-            <p class="question"><mark>This concept is known as the "Time Value of Money"</mark></p>`
+            content:`
+            <div class="keyconcept">
+                <p class="answer">A dollar today is worth more than a dollar in the future, because a dollar today can be invested for a positive return</p>
+            </div>`
             .replace(/(\n)(\s{2,})/g," ")
         },
         6:{
             title:"Conceptual Question: Discounting Cash Flows",
             content:`
-            <p class="question">If you invested your $100 for one month at an interest rate of 10% per month, how much would your $100 be worth in a month's time?
-            </p>`
+            <div class="qanda">
+                <div class="question">
+                    <p>If you invested your $100 for one month at an interest rate of 10% per month, how much would your $100 be worth in a month's time?
+                    </p>
+                </div>
+            </div>`
             .replace(/(\n)(\s{2,})/g," ")
         },
         7:{
             title:"Conceptual Question: Discounting Cash Flows",
             content:`
-            <p class="question">If you invested your $100 for one month at an interest rate of 10% per month, how much would your $100 be worth in a month's time?
-            </p>
-            <p>$100 initial investment + $10 interest = $110 at end of month</p>`
+            <div class="qanda">
+                <div class="question">
+                    <p class="question">If you invested your $100 for one month at an interest rate of 10% per month, how much would your $100 be worth in a month's time?
+                    </p>
+                </div>
+                <div class="answer">
+                    <p>$100 initial investment + $10 interest = $110 at end of month</p>
+                </div>
+            </div>`
             .replace(/(\n)(\s{2,})/g," ")
         },
         8:{
@@ -73,7 +104,9 @@ let htmlData = {
             title:"Foundation of Finance: Discounting Cash Flows",
             content:`
             <p>Rearranging gives the fundamental concept of finance:</p>
-            <p class="answer"><mark>Present Value = Future Cash Flow / (1 + interest rate)<sup>n</sup></mark></p>
+            <div class="keyconcept">
+                <p>Present Value = Future Cash Flow / (1 + interest rate)<sup>n</sup></p>
+            </div>
             <p>Where:</p>
             <ul>
                 <li><em>n</em> is the number of compounding periods</li>
@@ -85,7 +118,9 @@ let htmlData = {
         10:{
             title:"Foundation of Finance: Discounted Cash Flows",
             content:`
-            <p class="answer"><mark>Present Value = Future Cash Flow / (1 + interest rate)<sup>n</sup></mark></p>
+            <div class="keyconcept">
+                <p>Present Value = Future Cash Flow / (1 + interest rate)<sup>n</sup></p>
+            </div>
             <p>Finding the present value of a future cash flow is the foundation of finance</p>
             <ul>
                 <li>Bonds/Bills: discount future coupon payments (if applicable) and principal</li>
@@ -119,7 +154,9 @@ let htmlData = {
                 <li><strong>Maturity date</strong>: the date on which the repayments are completed</li>
             </ul>
             <h2>Bills</h2>
-            <p>A <em>bill</em> is essentially a bond with no coupon payments.</p>
+            <div class="keyconcept">
+                <p>A <em>bill</em> is essentially a bond with no coupon payments.</p>
+            </div>
             <p>The interest is factored in to the initial borrowed amount</p>
             <p>E.g. borrow $9m up front, pay back $10m in 10 years, total interest is $1m</p>
             `
@@ -128,9 +165,11 @@ let htmlData = {
         13:{
             title:"Bonds/Bills - Cash Flow Profile",
             content:`
-            <p>The cash flows of a fixed interest bond vs bill</p>
-            <img src='images/bondCashProfile.svg' class='multipleImages'/>
-            <img src='images/billCashProfile.svg' class='multipleImages'/>
+            <p>The cash flows of a fixed interest bond vs bill:</p>
+            <div class="grid-container">
+                <img src='/images/bondCashProfile.svg' class="grid-item "/>
+                <img src='/images/billCashProfile.svg' class="grid-item "/>
+            </div>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
@@ -147,9 +186,13 @@ let htmlData = {
         15:{
             title:"Bonds/Bills - Valuation & Interest Rates",
             content:`
-            <p>Using a bill as a stylised example...</p>
-            <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
-            <p class='question'>What happens to the bill's Present Value when the interest rate r changes?</p>
+                <p>Using a bill as a stylised example...</p>
+                <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
+            <div class="qanda">
+                <div class="question">
+                    <p>What happens to the bill's Present Value when the interest rate <em>r</em> changes?</p>
+                </div>
+            </div>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
@@ -158,9 +201,15 @@ let htmlData = {
             content:`
             <p>Using a bill as a stylised example...</p>
             <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
-            <p class='question'>What happens to the bill's Present Value when the interest rate r changes?</p>
-            <p class='question'><mark>If interest rate goes up, PV goes down</mark></p>
-            <p class='answer'><mark>If interest rate goes down, PV goes up</mark></p>
+            <div class="qanda">
+                <div class="question">
+                    <p>What happens to the bill's Present Value when the interest rate <em>r</em> changes?</p>
+                </div>
+                <div class="answer">
+                    <p>If interest rate goes up, PV goes down</p>
+                    <p>If interest rate goes down, PV goes up</p>
+                </div>
+            </div>
             <p>The same is true for bonds</p>
             `
             .replace(/(\n)(\s{2,})/g," ")
@@ -169,7 +218,7 @@ let htmlData = {
             title:"Bonds/Bills - Valuation & Interest Rates",
             content:`
             <p>Bond $10m face value, 10% coupon rate:</p>
-            <img src='images/bondPVVersusInterestRates.svg' class='singleImage'>
+            <img src='/images/bondPVVersusInterestRates.svg' class='singleImage'>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
@@ -177,8 +226,10 @@ let htmlData = {
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
             <p><strong>Duration</strong> describes the relationship between market value and interest rates</p>
-            <p class='answer'><mark>Duration is the first derivative of the PV calculation</mark></p>
-            <p>i.e. dPV/dr = duration</p>
+            <div class="keyconcept">
+                <p>Duration is the first derivative of the PV calculation</p>
+                <p>i.e. dPV/dr = duration</p>
+            </div>
             <p>Google the mathematics if interested...</p>
             `
             .replace(/(\n)(\s{2,})/g," ")
@@ -186,8 +237,10 @@ let htmlData = {
         19:{
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
-            <p>Duration formula:</p>
-            <p class='answer'><mark>Modified Duration = (Sum(PV<sub>CFi</sub> x T)) / PV) / (1 + ytm)</mark></p>
+            <p>Usable/practical duration formula:</p>
+            <div class="keyconcept">
+                <p>Modified Duration = (Sum(PV<sub>CFi</sub> x T)) / PV) / (1 + ytm)</p>
+            </div>
             <p>From the formula</p>
             <ul>
                 <li>Longer dated cash flows increase duration</li>
@@ -215,7 +268,7 @@ let htmlData = {
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
-        20:{
+        21:{
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
             <p>Putting it all together:</p>
@@ -229,7 +282,7 @@ let htmlData = {
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
-        21:{
+        22:{
             title:"Thank you",
             content:`<p>Thank you for your time.</p><p>Contact me if you have any questions and, as always, some good resources are:</p><ul><li>Google</li><li>Wikipedia</li><li>YouTube</li></ul>`
         }
