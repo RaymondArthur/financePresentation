@@ -3,7 +3,9 @@ body {
     padding: 0px;
 }
 
+/* ****************************************** */
 /* Styling for the main slide being displayed */
+/* ****************************************** */
 
 div.slide {
     min-height:75vh;
@@ -33,6 +35,25 @@ div.slide li {
     padding-bottom: 0.5em;
 }
 
+/* Setting font size for smartphones / small devices */
+@media only screen and (max-width: 1000px) {
+    div.slide h1 {
+        font-size: larger;
+    }
+
+    div.slide h2 {
+        font-size: large;
+    }
+
+    div.slide p {
+        font-size:medium;
+    }
+
+    div.slide li {
+        font-size: medium;
+    }
+}
+
 div.slide mark  {
     background-color: yellow;
 }
@@ -47,6 +68,13 @@ div.slide button {
     margin-right:1%;
     width: 48%;
     border-radius: 10px;
+}
+
+/* Setting font size of buttons on a smartphone / small screen */
+@media only screen and (max-width: 1000px) {
+    div.slide button {
+        font-size: medium;
+    }
 }
 
 div.slide .slideProgress {
@@ -116,6 +144,13 @@ div.slide img.singleImage  {
     margin-right: auto;
 }
 
+/* setting screen width for a single image on a smartphone / small screen */
+@media only screen and (max-width: 1000px) {
+    div.slide img.singleImage  {
+        width: 100%;
+    }
+}
+
 div.slide .grid-container  {
     display: grid;
     margin-left: auto;
@@ -136,7 +171,9 @@ div.slide iframe {
     margin-right: auto;
 }
 
+/* **************************************** */
 /* Styling for the slide menu toggle button */
+/* **************************************** */
 div.slideMenuButton button {
     background-color: pink;
     color:black;
@@ -147,8 +184,16 @@ div.slideMenuButton button {
     border-radius: 10px;
 }
 
+/* Setting font size of slide menu toggle button on a smartphone / small screen */
+@media only screen and (max-width: 1000px) {
+    div.slideMenuButton button {
+        font-size: medium;
+    }
+}
 
+/* ************************************************** */
 /* Styling for slide quick-menu parent grid-container */
+/* ************************************************** */
 
 div.slideMenuColumns {
     display:grid;
@@ -211,8 +256,6 @@ div.slideMenuTile img {
 div.slideMenuTile .slideMenuTileIFrame {
     height:10px;
     width:10px;
-    /*margin-left: auto;
-    margin-right: auto;*/
 }
 
 
