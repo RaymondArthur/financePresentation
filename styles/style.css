@@ -69,7 +69,7 @@ div.slide .buttons {
 }
 
 div.slide p.question {
-    width:720px;
+    max-width:720px;
     font-weight: bold;
     text-align: center;
     margin-left:auto;
