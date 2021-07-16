@@ -137,9 +137,22 @@ div.slide .keyconcept {
     background-color:lightcyan;
 }
 
+div.slide .equation {
+    text-align: center;
+    padding:10px;
+}
+
+/* setting screen width for TeX equations on a smartphone / small screen */
+@media only screen and (max-width: 1000px) {
+    div.slide img.equation  {
+        height: 5vh;
+    }
+}
+
 div.slide img.singleImage  {
+    margin: 10px;
     display: block;
-    width: 50%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
