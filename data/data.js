@@ -94,10 +94,13 @@ let htmlData = {
             title:"Conceptual Question: Discounting Cash Flows",
             content:`
             <p>Another way to express this calculation:</p>
-            <p>$100 today + $10 interest = $110 in the future</p>
-            <p>$100 x (1 + 10/100) = $110</p>
-            <p>$100 x (1 + 10%) = $110</p>
-            <p class="answer">Present Value x (1 + interest rate) = Future Value</p>`
+            <div class="keyconcept">
+                <p>$100 today + $10 interest = $110 in the future</p>
+                <p>$100 x (1 + 10/100) = $110</p>
+                <p>$100 x (1 + 10%) = $110</p>
+                <p>Present Value x (1 + interest rate) = Future Value</p>
+            </div>
+            `
             .replace(/(\n)(\s{2,})/g," ")
         },
         9:{
@@ -177,17 +180,38 @@ let htmlData = {
             title:"Bonds/Bills - Valuation",
             content:`
             <h2>Present Value of a bond</h2>
-            <p>PV<sub>bond</sub> = CF<sub>1</sub>/(1+r) + CF<sub>2</sub>/(1+r)<sup>2</sup>+ ... + (CF<sub>n</sub>+FV)/(1+r)<sup>n</sup></p>
+            <div class="equation">
+                <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                    \\LARGE&space;
+                    PV_{bond}=\\frac{CF_{1}}{(1&plus;r)^{1}}&plus;\\frac{CF_{2}}{(1&plus;r)^{2}}&plus;...&plus;\\frac{CF_{n}}{(1&plus;r)^{n}}" title="BondPV" 
+                />
+            </div>
+            <div class="equation">
+                <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                    \\LARGE&space;
+                    PV_{bond}=\\sum_{i=1}^{n}{\\frac{CF_{i}}{(1+r)^{i}}" title="BondPV" 
+                />
+            </div>    
             <h2>Present Value of a bill</h2>
-            <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
+            <div class="equation">
+                <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                \\LARGE&space;
+                PV_{bill}=\\frac{CF}{(1&plus;r)^{n}}" title="BillPV"
+            />
+            </div>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
         15:{
             title:"Bonds/Bills - Valuation & Interest Rates",
             content:`
-                <p>Using a bill as a stylised example...</p>
-                <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
+            <p>Using a bill as a stylised example...</p>
+            <div class="equation">
+                <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                \\LARGE&space;
+                PV_{bill}=\\frac{CF}{(1&plus;r)^{n}}" title="BillPV"
+            />
+            </div>
             <div class="qanda">
                 <div class="question">
                     <p>What happens to the bill's Present Value when the interest rate <em>r</em> changes?</p>
@@ -200,7 +224,12 @@ let htmlData = {
             title:"Bonds/Bills - Valuation & Interest Rates",
             content:`
             <p>Using a bill as a stylised example...</p>
-            <p>PV<sub>bill</sub> = FV/(1+r)<sup>n</sup></p>
+            <div class="equation">
+                <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                \\LARGE&space;
+                PV_{bill}=\\frac{CF}{(1&plus;r)^{n}}" title="BillPV"
+            />
+            </div>
             <div class="qanda">
                 <div class="question">
                     <p>What happens to the bill's Present Value when the interest rate <em>r</em> changes?</p>
@@ -230,6 +259,7 @@ let htmlData = {
                 <p>Duration is the first derivative of the PV calculation</p>
                 <p>i.e. dPV/dr = duration</p>
             </div>
+            <img src='images/DurationVsActualPV.svg' class='singleImage'>
             <p>Google the mathematics if interested...</p>
             `
             .replace(/(\n)(\s{2,})/g," ")
@@ -239,7 +269,33 @@ let htmlData = {
             content:`
             <p>Usable/practical duration formula:</p>
             <div class="keyconcept">
-                <p>Modified Duration = (Sum(PV<sub>CFi</sub> x T)) / PV) / (1 + ytm)</p>
+                <div class="equation">
+                    <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                    \\LARGE&space;
+                        ModD=                       
+                            \\frac{
+                                \\sum_{i=1}^{n}{
+                                        iPV_{CF_{i}}
+                                    }
+                            }
+                            {
+                                PV_{B}
+                            }/(1+y_{tm})"
+                            title="BillPV"
+                    />
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>
+                        <em>PV<sub>CF<sub>i</sub></sub></em> = PV of Cash Flow <em>i</em>
+                    </li>
+                    <li>
+                        <em>PV<sub>B</sub></em>= PV of bond (or bill)
+                    </li>
+                    <li>
+                        <em>y<sub>tm</sub></em>= yield to maturity
+                    </li>
+                </ul>
             </div>
             <p>From the formula</p>
             <ul>
