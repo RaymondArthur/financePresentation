@@ -147,6 +147,9 @@ div.slide .equation {
     div.slide img.equation  {
         height: 5vh;
     }
+    div.slide img.appendixEquation  {
+        min-height: 5vh;
+    }
 }
 
 div.slide img.singleImage  {
