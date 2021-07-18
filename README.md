@@ -41,6 +41,10 @@ When an `onClick` event is detected, the `slideNumber` state from a `slideTile` 
 
 Managing state is actually quite easy to do in ReactJS, and I also figured out that I could lift state up from lower components to ancestral components via methods (it's obvious in hindsight!).
 
+## TeX equations
+Because GitHub pages only support client-side code, I had to load TeX equations via <img> tags from CogeCogs.com
+Despite the existence of ReactJS TeX libraries, they only work with NodeJS as far as I am aware, which means they are server-side code and are not supported in GitHub pages.
+
 # File structure
     .                   
     ├── \data\           # HTML data for the slides (stored in a JSON object)
