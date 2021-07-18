@@ -260,7 +260,7 @@ let htmlData = {
                 <p>i.e. dPV/dr = duration</p>
             </div>
             <img src='images/DurationVsActualPV.svg' class='singleImage'>
-            <p>Google the mathematics if interested...</p>
+            <p>See appendix if interested in the mathematics...</p>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
@@ -284,42 +284,50 @@ let htmlData = {
                             title="BillPV"
                     />
                 </div>
-                <p>Where:</p>
-                <ul>
-                    <li>
-                        <em>PV<sub>CF<sub>i</sub></sub></em> = PV of Cash Flow <em>i</em>
-                    </li>
-                    <li>
-                        <em>PV<sub>B</sub></em>= PV of bond (or bill)
-                    </li>
-                    <li>
-                        <em>y<sub>tm</sub></em>= yield to maturity
-                    </li>
-                </ul>
             </div>
-            <p>From the formula</p>
+            <p>Where:</p>
             <ul>
-                <li>Longer dated cash flows increase duration</li>
-                <li>Shorter dated cash flows decrease duration</li>
+                <li>
+                    <em>i</em> = time period <em>i</em>
+                </li>    
+                <li>
+                    <em>PV<sub>CF<sub>i</sub></sub></em> = PV of Cash Flow <em>i</em>
+                </li>
+                <li>
+                    <em>PV<sub>B</sub></em> = PV of bond (or bill)
+                </li>
+                <li>
+                    <em>y<sub>tm</sub></em> = yield to maturity
+                </li>
             </ul>
-            <p>
-                Controlling duration is one way that the RBA manages interest rate risk on the foreign reserves portfolio.
-            </p>
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
         20:{
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
-            <p>Put another way:</p>
+            <p>Usable/practical duration formula:</p>
+            <div class="keyconcept">
+                <div class="equation">
+                    <img class="equation" src="https://latex.codecogs.com/svg.latex?
+                    \\LARGE&space;
+                        ModD=                       
+                            \\frac{
+                                \\sum_{i=1}^{n}{
+                                        iPV_{CF_{i}}
+                                    }
+                            }
+                            {
+                                PV_{B}
+                            }/(1+y_{tm})"
+                            title="BillPV"
+                    />
+                </div>
+            </div>
+            <p>From the formula</p>
             <ul>
-                <li>Increasing duration increases the impact of interest rates changes on portfolio value</li>
-                <li>Decreasing duration decreases the impact of interest rates changes on portfolio value</li>
-            </ul>
-            <p>So:</p>
-            <ul>
-                <li>Worried about rising interest rates? Lower the duration of the portfolio</li>
-                <li>This generally hasn't been a problem since the GFC...</li>
+                <li>Longer dated cash flows increase duration</li>
+                <li>Shorter dated cash flows decrease duration</li>
             </ul>
             `
             .replace(/(\n)(\s{2,})/g," ")
@@ -327,9 +335,20 @@ let htmlData = {
         21:{
             title:"Bonds/Bills - Duration & Interest Rate Risk",
             content:`
+            <p>Put another way:</p>
+            <ul>
+                <li>Increasing duration also increases the portfolio's sensitivity to changes in interest rates</li>
+                <li>Decreasing duration also decreases the portfolio's sensitivity to changes in interest rates</li>
+            </ul>
+            `
+            .replace(/(\n)(\s{2,})/g," ")
+        },
+        22:{
+            title:"Bonds/Bills - Duration & Interest Rate Risk",
+            content:`
             <p>Putting it all together:</p>
             <ul>
-                <li>A key worry of bond traders is rising interest rates. Why?</li>        
+                <li>A key worry of bond traders and portfolio managers is rising interest rates. Why?</li>        
                 <li>If interest rates go up, bond values go down</li>    
                 <li>What can bond traders do? Lower the duration of the portfolio</li>
                 <li>Lower duration = lower change in portfolio value if interest rates rise. But...</li>
@@ -338,9 +357,54 @@ let htmlData = {
             `
             .replace(/(\n)(\s{2,})/g," ")
         },
-        22:{
+        23:{
             title:"Thank you",
-            content:`<p>Thank you for your time.</p><p>Contact me if you have any questions and, as always, some good resources are:</p><ul><li>Google</li><li>Wikipedia</li><li>YouTube</li></ul>`
+            content:`<p>Thank you for your time.</p>
+            <p>Contact me if you have any questions and, as always, some good resources are:</p>
+            <ul><li>Google</li><li>Wikipedia</li><li>YouTube</li></ul>
+            `
+            .replace(/(\n)(\s{2,})/g," ")
+        },
+        24:{
+            title:"Appendix: Deriving Duration",
+            content:`
+            <div class="equation">
+                    <img class="appendixEquation" src="https://latex.codecogs.com/gif.latex?
+                        \\small&space;
+                        PV&space;=&space;
+                        \\sum_{i=0}^{n}\\frac{CF_i}{(1&plus;r)^i}&space;
+                        \\newline&space;\\newline&space;=&space;\\frac{CF_1}{(1&plus;r)^1}&plus;\\frac{CF_2}{(1&plus;r)^2}&plus;...&plus;\\frac{CF_n}{(1&plus;r)^n}&space;
+                        \\newline&space;\\newline&space;Duration&space;=\\frac{\\partial&space;PV}{\\partial&space;r}
+                        \\newline&space;\\newline&space;\\therefore&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{\\partial}{\\partial&space;r}\\frac{CF_1}{(1&plus;r)^1}&plus;\\frac{\\partial}{\\partial&space;r}\\frac{CF_2}{(1&plus;r)^2}&plus;...&plus;\\frac{\\partial}{\\partial&space;r}\\frac{CF_n}{(1&plus;r)^n}&space;
+                        \\newline&space;\\newline&space;\\therefore&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-CF_1}{(1&plus;r)^2}-\\frac{2CF_2}{(1&plus;r)^3}-...-\\frac{nCF_n}{(1&plus;r)^{n&plus;1}}&space;
+                        \\newline&space;\\newline&space;\\therefore&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\sum_{i=0}^{n}\\frac{-iCF_i}{(1&plus;r)^{i&plus;1}}&space;
+                        \\newline&space;\\newline&space;\\therefore&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-1}{(1&plus;r)}\\sum_{i=0}^{n}\\frac{iCF_i}{(1&plus;r)^{i}}&space;
+                        \\newline&space;\\newline&space;\\therefore&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-1}{(1&plus;r)}\\sum_{i=0}^{n}iPV_{CF_i}" 
+                        title="durationDerivation"
+                    />
+            </div>
+            `
+            .replace(/(\n)(\s{2,})/g," ")
+        },
+        25:{
+            title:"Appendix: Modified Duration",
+            content:`
+            <div class="equation">
+                <img class="appendixEquation"
+                    src="https://latex.codecogs.com/gif.latex?
+                    \\small&space;
+                    \\newline&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-1}{(1&plus;r)}\\sum_{i=0}^{n}iPV_{CF_i}&space;=&space;Duration&space;
+                    \\newline&space;\\newline&space;\\newline&space;\\therefore&space;\\frac{\\Delta&space;PV}{\\Delta&space;r}&space;=&space;Duration&space;
+                    \\newline&space;\\newline&space;\\therefore&space;\\Delta&space;PV&space;=&space;Duration\\Delta&space;r&space;
+                    \\newline&space;\\newline&space;\\therefore&space;\\frac{\\Delta&space;PV}{PV_B}&space;=&space;\\frac{Duration\\Delta&space;r&space;}{PV_B}&space;=&space;ModD&space;
+                    \\newline&space;\\newline&space;where&space;\\phantom{b}&space;ModD=&space;\\phantom{b}&space;Modified&space;\\phantom{b}&space;Duration&space;\\phantom{b}&space;
+                    \\newline&space;and&space;\\phantom{b}&space;PV_B=PV&space;\\phantom{b}&space;of&space;\\phantom{b}&space;the&space;\\phantom{b}&space;Bond&space;\\phantom{b}&space;or&space;\\phantom{b}&space;Bill" 
+                    title="ModDuration" />
+            </div>
+            <p>"Modified Duration" is the definition of duration <em>in practice</em>.</p>
+            <p>This is important because, in practice, we have to use discrete approximations to estimate a continuous function such as a bond's duration.</p>
+                `
+            .replace(/(\n)(\s{2,})/g," ")
         }
     }
 }
