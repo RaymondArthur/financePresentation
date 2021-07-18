@@ -369,7 +369,7 @@ let htmlData = {
             title:"Appendix: Deriving Duration",
             content:`
             <div class="equation">
-                    <img class="appendixEquation" src="https://latex.codecogs.com/gif.latex?
+                    <img class="appendixEquation" src="https://latex.codecogs.com/svg.latex?
                         \\small&space;
                         PV&space;=&space;
                         \\sum_{i=0}^{n}\\frac{CF_i}{(1&plus;r)^i}&space;
@@ -391,7 +391,7 @@ let htmlData = {
             content:`
             <div class="equation">
                 <img class="appendixEquation"
-                    src="https://latex.codecogs.com/gif.latex?
+                    src="https://latex.codecogs.com/svg.latex?
                     \\small&space;
                     \\newline&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-1}{(1&plus;r)}\\sum_{i=0}^{n}iPV_{CF_i}&space;=&space;Duration&space;
                     \\newline&space;\\newline&space;\\newline&space;\\therefore&space;\\frac{\\Delta&space;PV}{\\Delta&space;r}&space;=&space;Duration&space;
