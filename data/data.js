@@ -395,10 +395,9 @@ let htmlData = {
                     \\small&space;
                     \\newline&space;\\frac{\\partial&space;PV}{\\partial&space;r}&space;=&space;\\frac{-1}{(1&plus;r)}\\sum_{i=0}^{n}iPV_{CF_i}&space;=&space;Duration&space;
                     \\newline&space;\\newline&space;\\newline&space;\\therefore&space;\\frac{\\Delta&space;PV}{\\Delta&space;r}&space;=&space;Duration&space;
-                    \\newline&space;\\newline&space;\\therefore&space;\\Delta&space;PV&space;=&space;Duration\\Delta&space;r&space;
-                    \\newline&space;\\newline&space;\\therefore&space;\\frac{\\Delta&space;PV}{PV_B}&space;=&space;\\frac{Duration\\Delta&space;r&space;}{PV_B}&space;=&space;ModD&space;
+                    \\newline&space;\\newline&space;\\newline&space;\\therefore&space;\\frac{\\frac{\\Delta&space;PV}{\\Delta&space;r}}{PV_B}&space;=&space;\\frac{Duration}{PV_B}&space;=&space;ModD&space;
                     \\newline&space;\\newline&space;where&space;\\phantom{b}&space;ModD=&space;\\phantom{b}&space;Modified&space;\\phantom{b}&space;Duration&space;\\phantom{b}&space;
-                    \\newline&space;and&space;\\phantom{b}&space;PV_B=PV&space;\\phantom{b}&space;of&space;\\phantom{b}&space;the&space;\\phantom{b}&space;Bond&space;\\phantom{b}&space;or&space;\\phantom{b}&space;Bill" 
+                    \\newline&space;\\newline&space;and&space;\\phantom{b}&space;PV_B=PV&space;\\phantom{b}&space;of&space;\\phantom{b}&space;the&space;\\phantom{b}&space;Bond&space;\\phantom{b}&space;or&space;\\phantom{b}&space;Bill" 
                     title="ModDuration" />
             </div>
             <p>"Modified Duration" is the definition of duration <em>in practice</em>.</p>
