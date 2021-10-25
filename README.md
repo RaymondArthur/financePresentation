@@ -6,6 +6,9 @@ The main purpose of this web app is to allow me to learn beginner and intermedia
 
 **The best way to learn is to put theory into practice.**
 
+# Link to interactive page
+https://raymondarthur.github.io/reactJSFinanceSlideDeck/
+
 # The technologies of this app: JavaScript and ReactJS
 The technologies for the slide deck app are split into:
 1. JavaScript
